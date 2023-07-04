@@ -3,55 +3,10 @@
     <CRow>
       <CCol sm="12">
         <CCard>
-          <CForm novalidate>
             <CCardBody>
-			  <CInput
-                type="hidden"
-                required
-				v-model="storeDM.state.formData.username"
-               />
-              <CInput
-                type="text"
-                description="Please enter your username."
-                autocomplete="Username"
-                label="Username"
-                placeholder="Enter Username..."
-                required
-				v-model="storeDM.state.formData.username"
-                valid-feedback="Great!!"
-				:invalid-feedback="formDataMessage.username"
-				:is-valid="validatorUsername"
-              />
-			  <CInput
-                type="text"
-                description="Please enter your name."
-                autocomplete="name"
-                label="Name"
-                placeholder="Enter Name..."
-                required
-				v-model="storeDM.state.formData.name"
-                valid-feedback="Great!!"
-				:invalid-feedback="formDataMessage.name"
-				:is-valid="validatorName"
-              />
-              <CInput
-                type="text"
-				v-model="storeDM.state.formData.password"
-                description="Please enter your password."
-                autocomplete="current-password"
-                label="Password"
-                placeholder="Enter Password..."
-                required
-                valid-feedback="Great!!"
-				:invalid-feedback="formDataMessage.password"
-				:is-valid="validatorPassword"
-              />
+			  Do you want to delete this item ?
             </CCardBody>
-            <CCardFooter>
-              <CButton type="submit" @click="submit($event)" size="sm" color="primary"><CIcon name="cil-check-circle"/> Submit</CButton>
-            </CCardFooter>
-          </CForm>
-        </CCard>
+         </CCard>
       </CCol>
     </CRow>
   </div>
@@ -61,7 +16,7 @@
 import {hasWhiteSpace} from '@/views/../genFunctions/genFunctions'
 import { storeDM } from '../../redux/store'
 export default {
-  name: 'FormsUserCreate',
+  name: 'FormsConfirm',
   data(){
    return{
      storeDM:storeDM,

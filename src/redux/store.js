@@ -40,6 +40,14 @@ const storeDM = new Vuex.Store({
 		login: true,
 		register: false,
 		titleModal:"Add New User",
+		warningModal:false,
+		confirmModal:false,
+		formData:{
+			id:'',
+			username:'',
+			password:'',
+			name:''
+		},
 		id:2
 	  },
 	  actions: {
@@ -54,6 +62,24 @@ const storeDM = new Vuex.Store({
                 },
 				changeTitleModal(state, { title }) {
 					state.titleModal = title;
+				},
+				changeWarningModal(state, { modalState }){
+					state.warningModal = modalState;
+				},
+				changeConfirmModal(state, { modalState }){
+					state.confirmModal = modalState;
+				},
+				EmptyFormData(state){
+					state.formData.id = "";
+					state.formData.name = "";
+					state.formData.password = "";
+					state.formData.username = "";
+				},
+				changeFormData(state, { getData }){
+					state.formData.id = getData.id;
+					state.formData.name = getData.name;
+					state.formData.password = getData.password;
+					state.formData.username = getData.username;
 				}
             },
 })

@@ -11,6 +11,13 @@ const Colors = () => import('@/views/theme/Colors')
 const Typography = () => import('@/views/theme/Typography')
 
 const Charts = () => import('@/views/charts/Charts')
+const CChartBarExample = () => import('@/views/charts/CChartBarExample')
+const CChartDoughnutExample = () => import('@/views/charts/CChartDoughnutExample')
+const CChartLineExample = () => import('@/views/charts/CChartLineExample')
+const CChartPieExample = () => import('@/views/charts/CChartPieExample')
+const CChartPolarAreaExample = () => import('@/views/charts/CChartPolarAreaExample')
+const CChartRadarExample = () => import('@/views/charts/CChartRadarExample')
+
 const Widgets = () => import('@/views/widgets/Widgets')
 
 // Views - Components
@@ -105,11 +112,6 @@ function configRoutes () {
           ]
         },
         {
-          path: 'charts',
-          name: 'Charts',
-          component: Charts
-        },
-        {
           path: 'widgets',
           name: 'Widgets',
           component: Widgets
@@ -138,6 +140,52 @@ function configRoutes () {
               name: 'User',
               component: User
             }
+          ]
+        },
+		{
+          path: 'charts',
+          meta: {
+            label: 'Charts'
+          },
+          component: {
+            render(c) {
+              return c('router-view')
+            }
+          },
+          children: [
+            {
+              path: 'chartbar',
+              name: 'Chart Bar',
+              component: CChartBarExample
+            },
+			{
+              path: 'chartdoughnut',
+              name: 'Chart Doughnut',
+              component: CChartDoughnutExample
+			},
+			{
+              path: 'chartline',
+              name: 'Chart Line',
+              component: CChartLineExample
+			}
+			,
+			{
+              path: 'chartpie',
+              name: 'Chart Pie',
+              component: CChartPieExample
+			}
+			,
+			{
+              path: 'chartpolar',
+              name: 'Chart Polar',
+              component: CChartPolarAreaExample
+			}
+			,
+			{
+              path: 'chartradar',
+              name: 'Chart Radar',
+              component: CChartRadarExample
+			}
           ]
         },
 		{

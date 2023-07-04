@@ -6,7 +6,7 @@
           <CCardGroup>
             <CCard class="p-4">
               <CCardBody>
-                <CForm ref="form">
+                <CForm ref="form" @submit="submit($event)">
                   <h1>Login</h1>
                   <p class="text-muted">Sign In to your account</p>
                   <CInput
@@ -34,7 +34,7 @@
                   </CInput>
                   <CRow>
                     <CCol col="6" class="text-left">
-                      <CButton color="primary" @click="submit" class="px-4">Login</CButton>
+                      <CButton color="primary" type="submit" class="px-4">Login</CButton>
                     </CCol>
                   </CRow>
                 </CForm>
